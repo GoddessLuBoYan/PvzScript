@@ -63,7 +63,8 @@ def 收尾(wave):
         炮数 = 1
     else:
         炮数 = 0
-    
+    if wave == 20 and 炮数 == 0:
+        炮数 = 1
     for _ in range(炮数):
         pvz.Delay(760)
         种垫材()
@@ -100,5 +101,5 @@ while True:
     炮线程()
     垫材线程()
     炮消珊瑚()
-    pvz.StartNutsFixerThread([(3, 8), (4, 8)], "南瓜")
+    pvz.StartNutsFixerThread([(3, 7), (4, 7), (3, 8), (4, 8)], "南瓜")
     pvz.StartAutoCollectThread()
